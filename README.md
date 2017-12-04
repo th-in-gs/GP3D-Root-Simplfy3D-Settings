@@ -4,6 +4,8 @@ This is how I use Simplify3D with my GP3D Root 3D printer. It seems to be a grea
 
 Here are a .fff "FFF profile", a .frm firmware configuration file, and a double-clickable .command file, for Mac, to get USB communication working.
 
+I think that the Root is basically a slightly modified rebadge of the Weistek Ideawerk WT150, so this might help anyone trying to get that working in S3D too.
+
 If these are useful to you, I'd love to hear from you - jamie@montgomerie.net.
 
 ## Three Things of Note!
@@ -43,3 +45,14 @@ I'd love it if anyone knew a better way to do this.
 ### Binary communication
 
 Even though I use USB, the "Export File Format" has to be set to .x3g in the "Scripts" pane of the "FFF Settings" for things to work! Boy, did that take some time to figure out.
+
+
+### Acknowledgements
+
+Thanks to the folks participating in these forum threads, my journey to getting this to work started with these forum posts:
+
+http://hardy-parts.xobor.de/t62f38-Simplify-d-fuer-WT.htm (and all of http://hardy-parts.xobor.de/f33-Weistek-ideawerk-dprinter-WT.html, generally)
+http://rootprinting.forumotion.com/t13-root-profile-for-cura (and the rest of http://rootprinting.forumotion.com/ too)
+And [this thread on the S3D forums](https://forum.simplify3d.com/viewtopic.php?f=8&t=7023), where my travails were chronicled.
+
+
