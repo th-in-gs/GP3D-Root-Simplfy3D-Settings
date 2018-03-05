@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="GP3D Root" version="2017-12-03 20:37:04" app="S3D-Software 4.0.0">
+<profile name="GP3D Root" version="2018-03-04 17:16:09" app="S3D-Software 4.0.1">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
@@ -24,7 +24,7 @@
   <layerHeight>0.2</layerHeight>
   <topSolidLayers>3</topSolidLayers>
   <bottomSolidLayers>3</bottomSolidLayers>
-  <perimeterOutlines>2</perimeterOutlines>
+  <perimeterOutlines>3</perimeterOutlines>
   <printPerimetersInsideOut>0</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
   <startPointOriginX>0</startPointOriginX>
@@ -46,7 +46,7 @@
   <skirtExtruder>0</skirtExtruder>
   <skirtLayers>1</skirtLayers>
   <skirtOutlines>2</skirtOutlines>
-  <skirtOffset>4</skirtOffset>
+  <skirtOffset>2.6</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
   <primePillarExtruder>999</primePillarExtruder>
   <primePillarWidth>12</primePillarWidth>
@@ -70,7 +70,7 @@
   <internalInfillAngles>45,-45</internalInfillAngles>
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>1</generateSupport>
+  <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>30</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
@@ -121,10 +121,10 @@
   <machineTypeOverride>0</machineTypeOverride>
   <strokeXoverride>150</strokeXoverride>
   <strokeYoverride>150</strokeYoverride>
-  <strokeZoverride>141.9</strokeZoverride>
+  <strokeZoverride>140.7</strokeZoverride>
   <originOffsetXoverride>75</originOffsetXoverride>
   <originOffsetYoverride>75</originOffsetYoverride>
-  <originOffsetZoverride>141.9</originOffsetZoverride>
+  <originOffsetZoverride>140.7</originOffsetZoverride>
   <homeXdirOverride>-1</homeXdirOverride>
   <homeYdirOverride>-1</homeYdirOverride>
   <homeZdirOverride>1</homeZdirOverride>
@@ -133,12 +133,12 @@
   <flipZoverride>1</flipZoverride>
   <toolheadOffsets>0,0|0,0|0,0|0,0|0,0|0,0</toolheadOffsets>
   <overrideFirmwareConfiguration>1</overrideFirmwareConfiguration>
-  <firmwareTypeOverride>RepRap (Marlin/Repetier/Sprinter)</firmwareTypeOverride>
+  <firmwareTypeOverride>GP3D Root.frm</firmwareTypeOverride>
   <GPXconfigOverride>r2</GPXconfigOverride>
   <baudRateOverride>115200</baudRateOverride>
   <overridePrinterModels>0</overridePrinterModels>
   <printerModelsOverride></printerModelsOverride>
-  <startingGcode>; Turn off extruder.,M103 ,,; Set extruder temperature.,M104 S[extruder0_temperature] T0,,; Metric FTW.,G21,,; Home to the left front bottom.,G162 Z F450,G92 X0 Y0 Z0 A0 B0,,G161 Y X F2500,G92 X0 Y0 Z0 A0 B0,,; Make This point is now (-75 -75 0),G92 X-75 Y-75 Z0 A0 B0,,; Move to (-75 0 -130) to prepare to print.,; Y to 0 so that we don't hit the clip when moving in.,G1 X-75 Y0 Z0 F500 E0.0,,; Wait for the extruder to come to temperature.,M6 S[extruder0_temperature] T0,</startingGcode>
+  <startingGcode>; Turn off extruder.,M103 ,,; Set extruder temperature, let it heat while we're doing all the homing etc. ,; below.,M104 S[extruder0_temperature] T0,,; Metric FTW.,G21,,; Home to the left front bottom.,G162 Z F450,G92 X0 Y0 Z0 A0 B0,G161 Y X F2500,G92 X0 Y0 Z0 A0 B0,,; Now move in by 10mm and do it again, mostly to compensate for the bed being ,; initially held by gravity _below_ the Z endstop point.,G1 X10 Y10 Z-10 F500 E0.0,,G162 Z F450,G92 X0 Y0 Z0 A0 B0,G161 Y X F2500,G92 X0 Y0 Z0 A0 B0,,; We want the origin is at the center top of the print area.,; So the point the print head is at is now (-75 -75 0),G92 X-75 Y-75 Z0 A0 B0,,; Move to a good start point (-75 0 0) for the print head.,; (Y to 0 so that we don't hit a bed clip when moving in).,G1 X-75 Y0 Z0 F500 E0.0,,; Wait for the extruder to come to temperature.,M6 S[extruder0_temperature] T0,</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -152,7 +152,7 @@
   <solidInfillUnderspeed>0.8</solidInfillUnderspeed>
   <supportUnderspeed>0.8</supportUnderspeed>
   <rapidXYspeed>4800</rapidXYspeed>
-  <rapidZspeed>1002</rapidZspeed>
+  <rapidZspeed>1000</rapidZspeed>
   <minBridgingArea>50</minBridgingArea>
   <bridgingExtraInflation>0</bridgingExtraInflation>
   <bridgingExtrusionMultiplier>1</bridgingExtrusionMultiplier>
@@ -178,11 +178,11 @@
   <retractWhileWiping>0</retractWhileWiping>
   <onlyWipeOutlines>1</onlyWipeOutlines>
   <avoidCrossingOutline>0</avoidCrossingOutline>
-  <maxMovementDetourFactor>3</maxMovementDetourFactor>
+  <maxMovementDetourFactor>10</maxMovementDetourFactor>
   <toolChangeRetractionDistance>12</toolChangeRetractionDistance>
   <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
   <toolChangeRetractionSpeed>600</toolChangeRetractionSpeed>
-  <externalThinWallType>0</externalThinWallType>
+  <externalThinWallType>1</externalThinWallType>
   <internalThinWallType>2</internalThinWallType>
   <thinWallAllowedOverlapPercentage>10</thinWallAllowedOverlapPercentage>
   <singleExtrusionMinLength>1</singleExtrusionMinLength>

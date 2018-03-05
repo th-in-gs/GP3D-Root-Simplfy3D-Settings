@@ -39,10 +39,10 @@ flowControlMethod,1
 useCommunicationTimeout,1
 timeoutMilliseconds,30000
 GPXconfig,r2
-XstepsPerMM,88.573186
-YstepsPerMM,88.573186
-ZstepsPerMM,400.000000
-AstepsPerMM,96.2752018703
-BstepsPerMM,96.2752018703
+XstepsPerMM,71.699959
+YstepsPerMM,71.699959
+ZstepsPerMM,71.699959
+AstepsPerMM,100.4709550000
+BstepsPerMM,100.4709550000
 AaxisHasHBP,0
 BaxisHasHBP,0
